@@ -718,6 +718,13 @@ body.nav-open .nav-toggle span:nth-child(3) { bottom: 50%; transform: translateY
 .cta-banner .btn {
   background: var(--cream);
   color: var(--forest);
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  position: relative;
 }
 .cta-banner .btn:hover {
   background: var(--terracotta);
@@ -958,6 +965,12 @@ body.nav-open .nav-toggle span:nth-child(3) { bottom: 50%; transform: translateY
   .gallery-item.wide, .gallery-item.tall { grid-column: auto; grid-row: auto; }
   .hero-badge { left: 0; bottom: -30px; font-size: 0.8rem; padding: 1rem; }
   .fab { padding: 0.85rem 1.25rem; font-size: 0.75rem; }
+  .cta-banner .btn {
+    white-space: normal;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    letter-spacing: 0.06em;
+  }
 }
 
 /* =========================================================
