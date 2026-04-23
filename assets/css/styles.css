@@ -179,11 +179,17 @@ section {
   right: 0;
   z-index: 100;
   padding: 1.5rem 0;
+  transition: padding var(--transition), box-shadow var(--transition);
+  border-bottom: 1px solid transparent;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: rgba(247, 242, 234, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: padding var(--transition), box-shadow var(--transition);
-  border-bottom: 1px solid transparent;
+  z-index: -1;
 }
 .navbar.scrolled {
   padding: 0.9rem 0;
@@ -301,14 +307,14 @@ body.nav-open .nav-toggle span:nth-child(3) { bottom: 50%; transform: translateY
 .hero-visual {
   position: relative;
   aspect-ratio: 4/5;
-  border-radius: 50% 50% 30% 30% / 40% 40% 20% 20%;
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
 }
 .hero-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50% 50% 30% 30% / 40% 40% 20% 20%;
+  box-shadow: var(--shadow-medium);
+  display: block;
 }
 
 .hero-badge {
@@ -1085,8 +1091,10 @@ body.nav-open .nav-toggle span:nth-child(3) { bottom: 50%; transform: translateY
 :root[data-theme="dark"] h4 { color: var(--forest); }
 
 :root[data-theme="dark"] .navbar {
-  background: rgba(26, 33, 29, 0.82);
   border-bottom-color: transparent;
+}
+:root[data-theme="dark"] .navbar::before {
+  background: rgba(26, 33, 29, 0.82);
 }
 :root[data-theme="dark"] .navbar.scrolled {
   border-bottom-color: rgba(168, 184, 148, 0.15);
